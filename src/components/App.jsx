@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import { Button } from './Button/Button';
-import { User } from './User/User';
+// import { User } from './User/User';
 import { users } from '../Data/users';
 import { UserList } from './UserList/UserList';
-import { Section } from './Section/Section';
+// import { Section } from './Section/Section';
 
 export class App extends Component {
   state = {

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Text, Value } from './User.styled';
-export const User = ({ user: { name, email } }) => {
+export const User = ({ user: { name, email, id }, deleteUser }) => {
   const isViolet = email.includes('biz');
 
   return (
@@ -11,6 +11,7 @@ export const User = ({ user: { name, email } }) => {
       <Text>
         Email:<Value isViolet={isViolet}>{email}</Value>
       </Text>
+      <button onClick={() => deleteUser(id)}>Delete</button>
     </>
   );
 };

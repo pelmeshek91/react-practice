@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Value = styled.span`
-  color: ${({ isViolet }) => (isViolet ? 'lavender' : 'lightseagreen')};
+  color: ${({ isViolet }) => (isViolet ? 'lavender' : 'lightpink')};
 `;
 export const Text = styled.p`
   font-size: 14px;
-  color: lightcoral;
+  color: lightskyblue;
 
   &:hover {
-    color: lightskyblue;
+    color: lightpink;
   }
   &:hover ${Value} {
     color: lightsteelblue;

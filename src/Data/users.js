@@ -1,6 +1,7 @@
 export const users = [
   {
     id: '5b9289',
+    hasJob: false,
     name: 'Leanne Graha',
     username: 'Bret',
     email: 'Sincere@april.biz',
@@ -24,6 +25,7 @@ export const users = [
   },
   {
     id: 'b477dc',
+    hasJob: false,
     name: 'Ervin Howell',
     username: 'Antonette',
     email: 'Shanna@melissa.tv',
@@ -47,6 +49,7 @@ export const users = [
   },
   {
     id: 'afe2b5',
+    hasJob: false,
     name: 'Clementine Bauch',
     username: 'Samantha',
     email: 'Nathan@yesenia.net',
@@ -70,6 +73,7 @@ export const users = [
   },
   {
     id: '4a95f5',
+    hasJob: false,
     name: 'Patricia Lebsack',
     username: 'Karianne',
     email: 'Julianne.OConner@kory.org',
@@ -93,6 +97,7 @@ export const users = [
   },
   {
     id: '1a3403',
+    hasJob: false,
     name: 'Chelsey Dietrich',
     username: 'Kamren',
     email: 'Lucio_Hettinger@annie.ca',
@@ -116,6 +121,7 @@ export const users = [
   },
   {
     id: 'f642eb',
+    hasJob: false,
     name: 'Mrs. Dennis Schulist',
     username: 'Leopoldo_Corkery',
     email: 'Karley_Dach@jasper.info',
@@ -139,6 +145,7 @@ export const users = [
   },
   {
     id: 'af95da',
+    hasJob: false,
     name: 'Kurtis Weissnat',
     username: 'Elwyn.Skiles',
     email: 'Telly.Hoeger@billy.biz',
@@ -162,6 +169,7 @@ export const users = [
   },
   {
     id: '867fbf',
+    hasJob: false,
     name: 'Nicholas Runolfsdottir V',
     username: 'Maxime_Nienow',
     email: 'Sherwood@rosamond.me',
@@ -185,6 +193,7 @@ export const users = [
   },
   {
     id: '888a5f',
+    hasJob: false,
     name: 'Glenna Reichert',
     username: 'Delphine',
     email: 'Chaim_McDermott@dana.io',
@@ -208,6 +217,7 @@ export const users = [
   },
   {
     id: '8335b7',
+    hasJob: false,
     name: 'Clementina DuBuque',
     username: 'Moriah.Stanton',
     email: 'Rey.Padberg@karina.biz',

@@ -18,13 +18,30 @@ export class App extends Component {
       users: prevState.users.filter(user => userId !== user.id),
     }));
   };
+  changeJobStatus = userId => {
+    this.setState(prevState => ({
+      users: prevState.users.map(user => {
+        if (userId === user.id) {
+          return {
+            ...user,
+            hasJob: !user.hasJob,
+          };
+        }
+        return user;
+      }),
+    }));
+  };
   render() {
     const { isListShown, users } = this.state;
 
     return (
       <>
         {isListShown ? (
-          <UserList users={users} deleteUser={this.deleteUser} />
+          <UserList
+            users={users}
+            deleteUser={this.deleteUser}
+            changeJobStatus={this.changeJobStatus}
+          />
         ) : (
           <Button
             type="button"

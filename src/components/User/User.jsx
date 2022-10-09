@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
-
+import { Text, Value } from './User.styled';
 export const User = ({ user: { name, email } }) => {
+  const isViolet = email.includes('biz');
+
   return (
     <>
-      <p>Name:{name}</p>
-      <p>Email:{email}</p>
+      <Text>
+        Name: <Value> {name}</Value>
+      </Text>
+      <Text>
+        Email:<Value isViolet={isViolet}>{email}</Value>
+      </Text>
     </>
   );
 };

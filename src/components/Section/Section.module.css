@@ -3,3 +3,8 @@
     margin: auto;
     padding: 50px;
 }
+
+.sectionAccent {
+    composes: baseSection;
+    background-color: cornflowerblue;
+}

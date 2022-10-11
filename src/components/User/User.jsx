@@ -21,6 +21,7 @@ export const User = ({
       </Text>
       <button onClick={() => changeJobStatus(id)}>Change job status</button>
       <button onClick={() => deleteUser(id)}>Delete</button>
+      <button>Update user</button>
     </>
   );
 };

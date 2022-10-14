@@ -1,82 +1,32 @@
 import { Component } from 'react';
-import { Button } from './Button/Button';
-// import { User } from './User/User';
-import { users } from '../Data/users';
-import { UserList } from './UserList/UserList';
-import { AddUserForm } from './Form/AddUserForm';
-// import { Section } from './Section/Section';
-import { nanoid } from 'nanoid';
+import movies from '../Data/movies.json';
+import { MoviesGallery } from './MoviesGallery/MoviesGallery';
+import { Mapper } from './Utils/mapper';
 
 export class App extends Component {
   state = {
-    users,
-    isListShown: false,
-    userToUpdate: {},
+    movies: Mapper(movies),
   };
-  clickHandler = () => {
-    this.setState({ isListShown: true });
+
+  componentDidMount() {
+    const movies = localStorage.getItem('movies');
+    if (movies) {
+      this.setState({ movies: JSON.parse(movies) });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { movies } = this.state;
+    if (movies !== prevState.movies) {
+      localStorage.setItem('movies', JSON.stringify(movies));
+    }
+  }
+  deleteMovie = movieId => {
+    const updateMovies = this.state.movies.filter(({ id }) => id !== movieId);
+    this.setState({ movies: updateMovies });
   };
-  deleteUser = userId => {
-    this.setState(prevState => ({
-      users: prevState.users.filter(user => userId !== user.id),
-    }));
-  };
-  changeJobStatus = userId => {
-    this.setState(prevState => ({
-      users: prevState.users.map(user => {
-        if (userId === user.id) {
-          return {
-            ...user,
-            hasJob: !user.hasJob,
-          };
-        }
-        return user;
-      }),
-    }));
-  };
-  addUser = data => {
-    const newUser = { ...data, hasJob: false, id: nanoid() };
-    this.setState(prevState => ({
-      users: [...prevState.users, newUser],
-    }));
-  };
-  showUpdateForm = id => {};
   render() {
-    const { isListShown, users } = this.state;
-
-    return (
-      <>
-        {isListShown ? (
-          <>
-            <AddUserForm addUser={this.addUser} />
-
-            <UserList
-              users={users}
-              deleteUser={this.deleteUser}
-              changeJobStatus={this.changeJobStatus}
-            />
-          </>
-        ) : (
-          <Button
-            type="button"
-            text="Show uses list"
-            clickHandler={this.clickHandler}
-          />
-        )}
-      </>
-    );
+    const { movies } = this.state;
+    return <MoviesGallery movies={movies} deleteMovie={this.deleteMovie} />;
   }
 }
-
-/* export const App = () => {
-  return (
-    <>
-      <Section>
-        <User user={users[0]} />
-      </Section>
-      <Section title="UserList">
-        <UserList users={users} />
-      </Section>
-    </>
-  );
-}; */

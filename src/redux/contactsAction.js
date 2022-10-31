@@ -7,14 +7,14 @@ export const fetchContactsSuccess = createAction(
   'contacts/fetchContactsSuccess'
 );
 export const fetchContactsError = createAction('contacts/fetchContactsError');
-export const addContactsRequest = createAction('contacts/addContactsRequest');
-export const addContactsSuccess = createAction('contacts/addContactsSuccess');
-export const addContactsError = createAction('contacts/addContactsError');
-export const deleteContactsRequest = createAction(
-  'contacts/deleteContactsRequest'
+export const addContactRequest = createAction('contacts/addContactRequest');
+export const addContactSuccess = createAction('contacts/addContactSuccess');
+export const addContactError = createAction('contacts/addContactError');
+export const deleteContactRequest = createAction(
+  'contacts/deleteContactRequest'
 );
-export const deleteContactsSuccess = createAction(
-  'contacts/deleteContactsSuccess'
+export const deleteContactSuccess = createAction(
+  'contacts/deleteContactSuccess'
 );
-export const deleteContactsError = createAction('contacts/deleteContactsError');
+export const deleteContactError = createAction('contacts/deleteContactError');
 export const changeFilter = createAction('contacts/changeFilter');

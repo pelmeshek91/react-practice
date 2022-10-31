@@ -4,15 +4,15 @@ import {
   fetchContactsRequest,
   fetchContactsSuccess,
   fetchContactsError,
-  addContactsRequest,
-  addContactsSuccess,
-  addContactsError,
-  deleteContactsRequest,
-  deleteContactsSuccess,
-  deleteContactsError,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
 } from './contactsAction';
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'https://6240d2109b450ae274385b44.mockapi.io/api/v1';
 
 export const fetchContacts = () => async dispatch => {
   dispatch(fetchContactsRequest());
@@ -25,24 +25,24 @@ export const fetchContacts = () => async dispatch => {
   }
 };
 
-export const addContacts = contact => async dispatch => {
-  dispatch(addContactsRequest());
+export const addContact = contact => async dispatch => {
+  dispatch(addContactRequest());
 
   try {
     const { data } = await axios.post('/contacts', contact);
-    dispatch(addContactsSuccess(data));
+    dispatch(addContactSuccess(data));
   } catch (error) {
-    dispatch(addContactsError(error));
+    dispatch(addContactError(error));
   }
 };
 
-export const deleteContacts = id => async dispatch => {
-  dispatch(deleteContactsRequest());
+export const deleteContact = id => async dispatch => {
+  dispatch(deleteContactRequest());
 
   try {
     await axios.delete(`/contacts/${id}`);
-    dispatch(deleteContactsSuccess(id));
+    dispatch(deleteContactSuccess(id));
   } catch (error) {
-    dispatch(deleteContactsError(error));
+    dispatch(deleteContactError(error));
   }
 };

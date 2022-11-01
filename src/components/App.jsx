@@ -1,31 +1,25 @@
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/contactsOperation';
-
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { SearchFilter } from './SearchFilter/SearchFilter';
-import { Head, SubHead, Container } from './App.styled';
-
+import { Button } from './Button/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from 'redux/user/usersOperations';
+import { UsersList } from './UserList/UsersList';
+import { EmailFilterUsers } from './EmailFilterUser/EmailFilterUser';
+import { selectUsers } from 'redux/user/usersSelectors';
 export const App = () => {
+  const users = useSelector(selectUsers);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
+  const handleClick = () => {
+    dispatch(fetchUsers());
+  };
   return (
     <>
-      <ToastContainer position="top-center" />
-      <Container>
-        <Head>Phonebook</Head>
-        <ContactForm />
-        <SubHead>Contacts</SubHead>
-        <SearchFilter />
-        <ContactList />
-      </Container>
+      {users.length > 0 ? (
+        <>
+          <EmailFilterUsers />
+          <UsersList />
+        </>
+      ) : (
+        <Button text="Show user" type="button" clickHandler={handleClick} />
+      )}
     </>
   );
 };

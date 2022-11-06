@@ -1,7 +1,7 @@
 import { Button } from 'components/Button/Button';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectVisibleUsers } from 'redux/user/usersSelectors';
+import { selectVisibleUsers } from 'redux/users/usersSelectors';
 import { UpdateUserForm } from 'components/UpdateUserForm/UpdateUserForm';
 
 export const UsersList = () => {

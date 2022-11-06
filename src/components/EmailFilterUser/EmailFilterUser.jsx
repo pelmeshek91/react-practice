@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeFilter } from 'redux/user/usersSlice';
+import { changeFilter } from 'redux/users/usersSlice';
 
 export const EmailFilterUsers = () => {
   const [filter, setFilter] = useState('');

@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateUser } from 'redux/user/usersOperations';
+import { updateUser } from 'redux/users/usersOperations';
 
 export const UpdateUserForm = ({ user, closeForm }) => {
   const [companyName, setCompanyName] = useState(user.company);
   const dispatch = useDispatch();
-  const updateCompany = e => {
+
+  const changeCompany = e => {
     const { value } = e.target;
     setCompanyName(value);
   };
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(updateUser({ ...user, company: companyName }));
@@ -24,7 +26,7 @@ export const UpdateUserForm = ({ user, closeForm }) => {
           type="text"
           name="company"
           value={companyName}
-          onChange={updateCompany}
+          onChange={changeCompany}
         />
       </label>
       <button>Update</button>

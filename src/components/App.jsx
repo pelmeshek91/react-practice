@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { UsersPage } from 'pages/UsersPage/UsersPage';
-import { Layout } from './Layout/Layout';
 import { HomePage } from 'pages/HomePage/HomePage';
+import { Layout } from './Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { PrivateRoute } from './HOCs/PrivateRoute';
@@ -36,7 +36,6 @@ export const App = () => {
               </PublicRoute>
             }
           />
-
           <Route
             path="users"
             element={

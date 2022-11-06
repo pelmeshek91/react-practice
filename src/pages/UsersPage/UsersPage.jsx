@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUsers } from 'redux/user/usersOperations';
+import { fetchUsers } from 'redux/users/usersOperations';
 import { Button } from 'components/Button/Button';
 import { UsersList } from 'components/UserList/UsersList';
 import { EmailFilterUsers } from 'components/EmailFilterUser/EmailFilterUser';
-import { selectUsers } from 'redux/user/usersSelectors';
+import { selectUsers } from 'redux/users/usersSelectors';
 
 export const UsersPage = () => {
   const users = useSelector(selectUsers);

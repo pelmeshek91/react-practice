@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from 'redux/user/usersOperations';
-import { selectUsers } from 'redux/user/usersSelectors';
-import { EmailFilterUsers } from 'components/EmailFilterUser/EmailFilterUser';
-import { UsersList } from 'components/UserList/UsersList';
 import { Button } from 'components/Button/Button';
+import { UsersList } from 'components/UserList/UsersList';
+import { EmailFilterUsers } from 'components/EmailFilterUser/EmailFilterUser';
+import { selectUsers } from 'redux/user/usersSelectors';
 
 export const UsersPage = () => {
   const users = useSelector(selectUsers);
@@ -19,7 +19,7 @@ export const UsersPage = () => {
           <UsersList />
         </>
       ) : (
-        <Button text="Show user" type="button" clickHandler={handleClick} />
+        <Button text="Show users" type="button" clickHandler={handleClick} />
       )}
     </>
   );

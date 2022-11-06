@@ -1,18 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/authOperations';
+import { login } from 'redux/auth/authOperations';
 
-export const RegisterPage = () => {
-  const [name, setName] = useState('');
+export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
 
   const handleInput = ({ target: { name, value } }) => {
     switch (name) {
-      case 'name':
-        setName(value);
-        break;
       case 'email':
         setEmail(value);
         break;
@@ -26,25 +22,14 @@ export const RegisterPage = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(register({ name, email, password }));
-    setName('');
+    dispatch(login({ email, password }));
+
     setEmail('');
     setPassword('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleInput}
-          placeholder="User name"
-          required
-        />
-      </label>
       <label>
         Email:
         <input

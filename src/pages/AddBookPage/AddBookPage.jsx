@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { addBook } from 'redux/Books/booksAction';
+import { addBook } from 'redux/Books/booksSlice';
 import { useDispatch } from 'react-redux';
 
 export const AddBookPage = () => {

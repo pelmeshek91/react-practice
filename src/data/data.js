@@ -1,5 +1,4 @@
-import { ADD_BOOK, DELETE_BOOK } from './booksTypes';
-const books = [
+export const books = [
   {
     id: '1',
     title: `Apple. Эволюция компьютера`,
@@ -39,13 +38,3 @@ const books = [
     какими инструментами ему нужно пользоваться.`,
   },
 ];
-export const booksReducer = (state = [...books], { type, payload }) => {
-  switch (type) {
-    case ADD_BOOK:
-      return [...state, payload];
-    case DELETE_BOOK:
-      return state.filter(book => book.id === payload);
-    default:
-      return state;
-  }
-};
